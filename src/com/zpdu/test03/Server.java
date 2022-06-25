@@ -19,6 +19,7 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(7777);
             while (true) {
                 Socket accept = serverSocket.accept();
+
 //                SreverThread sreverThread = new SreverThread(accept);
 //                sreverThread.start();
                 threadPoolExecutor.execute(new runnable(accept));
